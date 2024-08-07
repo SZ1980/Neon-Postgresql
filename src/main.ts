@@ -30,7 +30,7 @@ async function main() {
 
   const signals = ["SIGINT", "SIGTERM"];
 
-//   logger.debug(env, "using env");
+  logger.debug(env, "using env");
 
   for (const signal of signals) {
     process.on(signal, () => {
