@@ -1,5 +1,4 @@
 import { migrate } from "drizzle-orm/node-postgres/migrator";
-
 import { env } from "./config/env";
 import { logger } from "./utils/logger";
 import { buildServer } from "./utils/server";
@@ -17,13 +16,10 @@ async function main() {
   const app = await buildServer();
 
   await app.listen({
-    port:  env.PORT,
+    port: env.PORT,
     host: env.HOST,
   });
 
-
-
- 
   await migrate(db, {
     migrationsFolder: "./migrations",
   });
@@ -42,5 +38,3 @@ async function main() {
 }
 
 main();
-
- console.log('zokiii');
